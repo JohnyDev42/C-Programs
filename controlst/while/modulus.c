@@ -1,0 +1,59 @@
+#include<stdio.h>
+int main()
+{
+	int i,m,n;
+	printf("Enter two numbers for modulus:\n");
+	scanf("%d%d",&m,&n);
+	if(m==0)
+		printf("Modulus=%d\n",0);
+	else
+		if(n==0)
+			printf("Modulus=%d",m);
+	if(m==n)
+	{
+		m=0;
+		printf("Modulus=%d\n",m);
+	}
+	else
+	if(m<0&&n>0)
+	{
+		m=-m;
+		while(m>=n)
+		{
+			m=m-n;
+		}
+		printf("Modulus=%d\n",-m);
+	}
+	else
+		if(m>0&&n<0)
+		{
+			n=-n;
+			while(m>=n)
+			{
+				m=m-n;
+			}
+			printf("Modulus=%d\n",m);
+		}
+		else
+		if(m<0&&n<0)
+		{
+			m=-m;
+			n=-n;
+			while(m>=n)
+			{
+				m=m-n;
+			}
+			printf("Modulus=%d\n",-m);
+		}
+		else
+	if(n>0&&m>0)
+	{
+	while(m>=n)
+	{
+		m=m-n;
+	}
+	printf("Modulus=%d\n",m);
+	}
+}
+
+

@@ -1,0 +1,32 @@
+/*Generate all possible Binary String Pattern */
+
+#include<stdio.h>
+void findBin(char *str,int index);
+int main()
+{
+	char str[20]="1??0?101";
+//	printf("Enter the Binary with Wild Characters:");
+//	scanf("%[^\n]s",str);
+	findBin(str,0);
+}
+void findBin(char *str,int index)
+{
+	char *ptr=str;
+	if(index==sizeof(ptr)-1)
+	{
+		printf("%s\n",ptr);
+		return;
+	}
+	if(ptr[index]=='?')
+	{
+		ptr[index]='0';
+		findBin(ptr,index+1);
+//		printf("%s\n",str);
+		ptr[index]='1';
+		findBin(ptr,index+1);
+//		printf("%s\n",str);
+	}
+	else
+		findBin(ptr,index+1);
+//	printf("%s\n",str);
+}
